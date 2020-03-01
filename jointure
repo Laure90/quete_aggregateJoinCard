@@ -1,0 +1,35 @@
+create database EarthMars
+go
+use EarthMars;
+create table martien (
+id_m int primary key identity (1,1),
+M_name varchar(50) not null,
+baseM varchar(50) not null,
+id_sup int not null,
+id_e int not null
+);
+go
+ 
+use EarthMars;
+create table terrien (
+id_e int primary key identity (1,1),
+E_name varchar(50) not null,
+continent varchar(50) not null,
+FK_martienID int foreign key (FK_martienID) references martien(id_m)
+);
+go
+ 
+ 
+INSERT INTO martien (M_name, baseM, id_sup, id_e) VALUES ('Briak', 'Mbase1',2,1)
+INSERT INTO martien (M_name, baseM, id_sup, id_e) VALUES ('Tealc', 'Mbase2', 3,2)
+INSERT INTO martien (M_name, baseM, id_sup, id_e) Values ('Bratak', 'Mbase3', 4,3)
+INSERT INTO martien (M_name, baseM, id_sup, id_e) Values ('Anubis', 'mars', 4,4)
+ 
+ 
+INSERT INTO terrien(E_name, continent, FK_martienID) VALUES ('Carter', 'Ameriques',1)
+INSERT INTO terrien(E_name, continent, FK_martienID) VALUES ('Jackson', 'Europe', 2)
+INSERT INTO terrien(E_name, continent, FK_martienID) Values ('Yu', 'Asie', 3)
+INSERT INTO terrien(E_name, continent, FK_martienID) Values ('Trump', 'Terre', 4)
+ 
+ 
+select M_name, E_name, continent, baseM From martien inner join terrien on martien.id_e = terrien.FK_martienID;
