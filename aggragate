@@ -29,33 +29,33 @@ use shop
 insert into categorie(cat_name) values ('pain'), ('viennoiserie'),('tartes')
 
 insert into produit(p_name, price, FK_catID) values ('baguette',1,1),
-													('pain complet',2,1), 
-													('pain aux céréales', 2, 1),
-													('croissant au chocolat', 1,2), 
-													('pain au chocolat', 1,2), 
-													('chausson aux pommes',2,2),
-													('tarte aux pommes', 10,3), 
-													('tarte aux mirabelles',12,3), 
-													('tarte aux quetches',12,3)
+						('pain complet',2,1), 
+						('pain aux céréales', 2, 1),
+						('croissant au chocolat', 1,2), 
+						('pain au chocolat', 1,2), 
+						('chausson aux pommes',2,2),
+						('tarte aux pommes', 10,3), 
+						('tarte aux mirabelles',12,3), 
+						('tarte aux quetches',12,3)
 
 insert into achat(a_name, sumAchat,achatDate,FK_pID) values ('baguette', 1,'20200104',1),
-																	('croissant au chocolat', 1,'20191223',4),
-																	('pain au chocolat', 1,'20191223',5),
-																	('chausson aux pommes', 2,'20191223',6),
-																	('baguette',1,'20200104',1),
-																	('tarte aux mirabelles', 12,'20200104',8),
-																	('baguette', 1,'20200104',1),
-																	('baguette', 1,'20200104',1),
-																	('croissant au chocolat', 1,'20191223',4),
-																	('pain au chocolat', 1,'20191223',5),
-																	('croissant au chocolat',1,'20191223',4),
-																	('croissant au chocolat', 1,'20191223',4),
-																	('croissant au chocolat', 1,'20191223',4),
-																	('baguette', 1,'20200104',1),
-																	('tarte aux mirabelles', 12,'20200104',8),
-																	('baguette', 1,'20200104',1),
-																	('chausson aux pommes', 2,'20200104',6),
-																	('baguette', 1,'20200104',1)
+							('croissant au chocolat', 1,'20191223',4),
+							('pain au chocolat', 1,'20191223',5),
+							('chausson aux pommes', 2,'20191223',6),
+							('baguette',1,'20200104',1),
+							('tarte aux mirabelles', 12,'20200104',8),
+							('baguette', 1,'20200104',1),
+							('baguette', 1,'20200104',1),
+							('croissant au chocolat', 1,'20191223',4),
+							('pain au chocolat', 1,'20191223',5),
+							('croissant au chocolat',1,'20191223',4),
+							('croissant au chocolat', 1,'20191223',4),
+							('croissant au chocolat', 1,'20191223',4),
+							('baguette', 1,'20200104',1),
+							('tarte aux mirabelles', 12,'20200104',8),
+							('baguette', 1,'20200104',1),
+							('chausson aux pommes', 2,'20200104',6),
+							('baguette', 1,'20200104',1)
 
 select sum(price) as totalAmount, count(achat.a_ID) as totalAchat,produit.FK_catID from achat
 inner join produit on produit.p_ID = achat.FK_pID
